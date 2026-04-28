@@ -74,7 +74,102 @@ class - 1
 
                 -> Login to HRMS System (Too Many Requests Timeout Error) -> (ITOM)
 
-                
 
 
+class - 2
+==========
+
+    -> How To Use Service Now Platform ?
+
+        -> We Need Service Now Instance 
+
+    
+    -> What is an Instance (Cloud Term)
+
+        -> An instance in cloud computing is a virtual server (virtual machine) 
+        running on a cloud provider's physical infrastructure, 
+        acting as a dedicated resource for running applications, databases, or websites.
+
+    -> What is an Instance (Service Now)
+
+        -> When you are accessing ServiceNow, you are accessing an instance of ServiceNow platform.
+
+        -> An Organization can have multiple instances 
+
+            -> Development Instance     -   New Features Development 
+            -> Test Instance            -   Test the Features Developed (QA - CHECK PASSED)
+            -> Production Instance      -   Live Data (Customers)
+
+            -> NOTE: Each of the above instance is a single implementation of ServiceNow Platform.
         
+        
+        -> NOTE: Your data is protected 
+
+            -> Your Organization Data isn't mingled in the same database as another Organization's data 
+
+        -> NOTE: Easy To Do Data Migration
+
+            -> Each instance has customer data that can be exchanged between other instance.
+            For example it is easy for data to be migrated from a Development instance to QA instance to Production instance.
+
+        -> NOTE: Instance Upgrades 
+
+            -> Zurich Version To Australia Version 
+
+            -> Upgrades are made on individual instances.
+
+            -> Upgrades are made on Non-Production instance (QA)  
+
+    
+    
+    -> Signup for Service Now Account 
+
+        -> https://signon.servicenow.com/x_snc_sso_auth.do?pageId=login
+
+            -> Get Service Now Account and Create 
+
+            -> Login With User email & Password 
+
+            -> Click On Manage Instance
+
+                -> https://dev314768.service-now.com/
+
+                -> Use the credentials to sign in 
+
+    
+    -> ServiceNow UI 
+
+        -> How to work with ServiceNow User Interface & Navigation 
+
+            -> Banner Frame 
+            -> Application Navigator 
+            -> Content Frame 
+
+            -> Lists 
+            -> Forms 
+            -> Filters 
+            -> Search 
+            -> Breadcrumbs 
+
+            -> etc 
+
+        -> ServiceNow UI Layout 
+
+            -> It has three main Areas 
+
+                -> Banner Frame             (Top)
+                -> Application Navigator    (Left)
+                -> Content Frame            (Middle)
+
+                -> NOTE: These three areas work together to helps users find and work with their data 
+
+        -> Banner Frame (Top Section)
+
+            -> The Banner Frame runs across the top of the screen and provides global tools.
+
+                -> Logo - Often Your Company Logo 
+                -> User Menu - Shows your name or avatar (check profile, logout, impersonate a user)
+                -> Global Search - Search across all the platform(incidents, users, problems etc )
+                -> Help - Access Help Content & Documentation 
+                -> System Settings - UI Preferences(Themes etc )
+
