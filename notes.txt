@@ -1,0 +1,80 @@
+class - 1
+==========
+
+    ->  Cloud Computing Platform
+
+        -> Infrastructure As A Service (IAAS)   - 
+
+        -> Platforms As A Service (PAAS)        - 
+
+        -> Softwares As A Service (SAAS)        -
+
+        -> NOTE: ServiceNow is a "platform-as-a-service"  
+        that is designed to support IT service management and help desk functionality.
+
+            -> To Run Any Application, We need 
+
+                -> Infrastructure
+
+                    -> Hardware (CPU - RAM - HDD - Routers - Switches - Firewalls etc )
+                    -> Internet (Network)
+                    -> Servers 
+                    -> Operating Systems 
+                    -> etc
+
+                -> Platform 
+
+                    -> Web Server: Web Servers Power the Internet i.e Web Pages we are accessing
+                    on Internet are hosted on Web Servers. 
+
+                    -> App Servers: App Servers Power Backend Operations (Business Logics)
+
+                    -> Database Servers: Where the data is hosted i.e transactions data 
+
+                    -> etc  
+
+
+        -> Why do any company does Business ? 
+
+            -> To Generate Revenue / Profit 
+
+                -> What Do we need To Generate Revenue / Profit  ?
+
+                    -> Product: amazon.in  - Salesforce - Google  
+
+                    -> Service: NTT, Infosys, TCS etc   
+
+        -> IT Teams are most important when it comes to managing services 
+
+        -> Marketing Teams - Attract Customers 
+
+        -> Sales Teams - Attain Customers 
+
+        -> Service Teams - Retain Customers 
+
+        -> Where do we manage Customers ?
+
+            -> CRM - Customer Relationship Management 
+
+                -> Salesforce, Zoho etc 
+
+        -> Where do we manage Employees ?
+
+            -> HRMS - Human Resource Management Systems 
+
+                -> Workday, Oracle HCM, GreytHr etc 
+
+        -> IT Departments 
+
+            -> IT Departments Support Applications 
+
+                -> Laptop it's not switching on -> New Laptop (ITAM)
+
+                -> Email server is not working -> Email is Down (ITSM)
+
+                -> Login to HRMS System (Too Many Requests Timeout Error) -> (ITOM)
+
+                
+
+
+        
