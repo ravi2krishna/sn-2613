@@ -173,3 +173,43 @@ class - 2
                 -> Help - Access Help Content & Documentation 
                 -> System Settings - UI Preferences(Themes etc )
 
+
+class - 3
+==========
+
+    -> Working With Lists 
+
+        -> List in servicenow shows "Multiple Records" from a single table
+        (Such as incident table, user table, problems table etc)
+
+        -> Each row = One Record (Single Incident i.e INC0000005 whole row)
+
+        -> Each Column = One Field (Number,Short description, Priority)
+
+        -> Each Cell = One Field for that record (INC0000009 in the Number Column, New in the State Column)
+
+    
+    -> Interactions With Lists 
+
+        -> On any list, users can open a record 
+
+            -> Click any blue value (often this will be number or name) it opens Form for that record 
+
+        -> Sort the list 
+
+            -> Click on column header 
+            -> Click one to sort in ascending order and Click again to sort in descending order 
+        
+        -> Grouping Option 
+
+            -> Group Multiple Records of same type under one set 
+
+            -> Select column 
+
+        -> Change / Update Field In List 
+
+            -> Double Click on the field 
+
+        -> Personalize List 
+
+            -> Click On Gear Icon 
