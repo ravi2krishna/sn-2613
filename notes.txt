@@ -213,3 +213,452 @@ class - 3
         -> Personalize List 
 
             -> Click On Gear Icon 
+
+
+class - 4
+==========
+
+    -> Forms In ServiceNow
+
+        -> A Form Displays all the relevant details for one specific record 
+
+        -> You see a single incident or single user etc 
+
+        -> When we open a single record, we have fields 
+
+            -> Each field holds some piece of information, from incidents point of view 
+
+                -> Number
+                -> Channel
+                -> State
+                -> Priority
+                -> etc 
+
+            -> We have Field Types 
+
+                -> Typical Fields Include 
+
+                    -> String - Text Box (Short description)
+                    -> Choice - Dropdown with multiple values(Sub Category CPU, Disk, Memory etc)
+                    -> Reference - Lookup Fields with Magnifying Glass, this points to another table 
+                        -> Service - Connects to another table(cmdb_ci_service_list)
+                    -> Dependency View - Configuration item
+                    -> True / False - Checkbox 
+
+            -> Sections 
+
+                -> Forms can be split into Sections (tabs)
+
+                -> Activity Stream 
+
+                    -> Show Comments, Work Notes, Priority etc 
+
+
+            -> Basic form Interactions 
+
+                -> View Data - Read each field 
+
+                -> Edit Data - Change data 
+
+                -> Save Data - Saves and Stay On the form (Right Click -> Save)
+
+                -> Update - Saves and returns to previous list 
+
+    
+    -> ServiceNow Data & Database 
+
+        -> What Is Data ?
+
+            -> Data is information that can be stored and used. 
+
+                -> A Person Name (caller - Fred Luddy)
+                -> A Description (short description EMAIL is slow when an attachment is involved)
+                -> An Incident Number (INC0000013)
+                -> etc 
+
+            -> NOTE: In ServiceNow all the tickets, users, assets, services etc are just data stored in
+            structured form 
+
+
+        -> What is Database ?
+
+            -> A Database is digital storage System that organizes data, so we can Search, update and analyze it easily 
+
+            -> Types Of Databases 
+
+                -> Relations Database(SQL)
+
+                    -> Stores data in Tables (rows & columns) 
+
+                    -> Examples: MySQL, Maria DB, Postgres SQL etc 
+
+                    -> ServiceNow Uses Relational Model under the hood. 
+
+                        -> ServiceNow primarily uses MariaDB (a community-developed fork of MySQL) 
+
+
+        -> Tables 
+
+            -> What is Table ?
+
+                -> A table is the fundamental structure used to organize and store data in a relational database
+
+                -> https://hbs-rcs.github.io/sql-novice-survey/fig/RelationalDB.PNG
+
+                -> Think of tables as excel sheets 
+
+                    -> Each Row = One Record (specific item)
+
+                    -> Each Column = One Field (specific piece of information about the item)
+
+                    -> Each Cell = Value of one field for one record 
+
+
+                -> In ServiceNow
+
+                    -> A Record is Row (Single Incident)
+
+                    -> A Filed is Column (Short Description)
+
+                    -> Incident Table (Stores all incidents Records)
+
+            -> NOTE: ServiceNow has 4000+ tables 
+
+            -> Task Related Tables 
+
+                -> Task (task) - Base table for many work items 
+
+                -> incident - Unplanned Interruptions 
+                
+                -> problem - Recurring Issues (Root Cause Analysis)
+
+                -> change_request - Planned Changes in the IT Environment
+
+            
+            -> User & Access 
+
+                -> User (sys_user) - Stores User Profiles 
+
+                -> Group (sys_user_group) - Collection Of Users 
+
+                -> Role (sys_user_role) - Defines Permissions 
+
+            
+            -> Knowledge Management
+
+                -> Knowledge Article (kb_knowledge)
+
+                -> Knowledge Category (kb_category)
+
+                -> Knowledge Base (kb_knowledge_base)
+
+            
+            -> Service Catalog
+
+                -> Service Catalog (sc_catalog) - Catalog Container 
+
+                -> Catalog Item (sc_cat_item) - individual items 
+
+            
+            -> CMDB (Configuration Management Database)
+
+                -> Configuration Item (cmdb_ci) - Base Class for all CI'same
+
+                -> Server CI (cmdb_ci_server) - Child Class representing Servers, extends cmdb_ci 
+
+        -> NOTE: SYS_ID is a record unique identifier in ServiceNow. 
+        A unique 32-character GUID (Globally Unique ID), called a Sys ID (sys_id) identifies each record.
+
+            -> sys_id - 3D9c573169c611228700193229fff72400
+
+
+
+class - 5
+==========
+
+    -> Users - Groups - Roles(Permissions)
+
+
+    -> User 
+
+        -> Every Person who logs into servicenow should have a user created 
+
+        -> Each user is a record in sys_user table(just like each incident in the incident table)
+
+        -> A User record stores information such as
+
+            -> User ID / Username (used for login)
+            -> First Name 
+            -> Last Name 
+            -> Email 
+            -> Phone No 
+            -> Department
+            -> etc 
+
+        -> A user record also tracks 
+
+            -> Which Groups the user belongs to 
+
+            -> Which Roles the user has 
+
+        -> NOTE: User -> belongs to Groups -> Inherits Roles (Recommended Way)
+
+        -> NOTE: User -> Directly Assign Roles 
+
+
+    -> Groups 
+
+        -> For Organizing People 
+
+        -> A Group is Collection Of Users 
+
+        -> Groups records are stored in sys_user_group table 
+
+        -> Groups act like buckets or teams that organize users who share a purpose 
+
+            -> Service Desk 
+            -> Network
+            -> IT Security 
+            -> etc 
+
+    -> Why Groups are important 
+
+        -> Assigning Work 
+
+            -> Incidents, Problems, HR Cases etc can be Assigned to Groups 
+
+            -> Any member of that group can pick up and start working on item 
+
+        -> Managing Permissions 
+
+            -> BEST PRACTICE is to assign Roles To Groups, not Directly to users 
+
+            -> When a user is added to group, they will automatically inherit groups roles 
+
+            -> This approach makes Onboarding, Transfers & Offboarding much easier.
+
+        -> Notifications 
+
+            -> You can send Notifications to an entire group, 
+            Say Service Desk gets notified when P1 incident is logged
+
+        -> Direct Role Assignment 
+
+            ->  You go to a user record and add a role straight to their Roles tab. 
+            It works, but it creates a management problem at scale.
+
+            -> If you have 20 Service Desk agents and they all need the itil role, 
+            you make 20 individual assignments. 
+            When a new agent joins, you remember to add it manually. 
+            When someone leaves or changes teams, you have to hunt down their user record and clean it up. 
+            When an audit asks "who has itil access?", you need to scan every single user record.
+        
+        -> Via Group Assignment
+
+            -> You add the itil role to the Service Desk group once, 
+            then manage membership — not roles. 
+            Every member of the group automatically inherits itil. 
+            Add someone to the group, they instantly get the role. 
+            Remove them from the group, the role is gone. The role itself never needs to be touched again.
+
+    
+    -> Roles - Granting Permissions 
+
+        -> A Role is bundle of Permissions 
+
+        -> Roles are records in the table sys_user_role 
+
+        -> Think of Role as a key that will unlock certain actions to be done on servicenow 
+
+        -> Roles can allow user to do 
+
+            -> Read / Create / Update / Delete (CRUD)
+
+        
+        -> How Roles Can be Assigned 
+
+            -> Role To User (Directly)
+
+            -> Role To Group (All Group members inherit)
+
+            -> Role To Role (Child Roles included automatically)
+
+
+        -> NOTE: Assign Roles To Groups 
+        -> NOTE: Avoid Assigning many roles Directly to user, as it becomes hard to manage and audit 
+
+        -> OOB Roles(Out Of Box) 
+
+            -> admin: Full Access to system 
+            -> itil: Standard Role For IT Staffing manage incidents/problems/changes 
+            -> knowledge_admin: Manages Knowledge Bases and Articles 
+            -> catalog_admin: Manages Service Catalogs 
+            -> report_admin: MAnage Reporting 
+            -> cmdb_admin: Manages CMDB Configurations(ITSM & ITOM)
+
+        
+    -> NOTE: Putting All the things together
+
+        -> User -> Group -> Role(Permission)
+
+    -> NOTE: When we create a user, by default no Permissions are set for user 
+
+    
+
+class - 4
+==========
+
+    -> Forms In ServiceNow
+
+        -> A Form Displays all the relevant details for one specific record 
+
+        -> You see a single incident or single user etc 
+
+        -> When we open a single record, we have fields 
+
+            -> Each field holds some piece of information, from incidents point of view 
+
+                -> Number
+                -> Channel
+                -> State
+                -> Priority
+                -> etc 
+
+            -> We have Field Types 
+
+                -> Typical Fields Include 
+
+                    -> String - Text Box (Short description)
+                    -> Choice - Dropdown with multiple values(Sub Category CPU, Disk, Memory etc)
+                    -> Reference - Lookup Fields with Magnifying Glass, this points to another table 
+                        -> Service - Connects to another table(cmdb_ci_service_list)
+                    -> Dependency View - Configuration item
+                    -> True / False - Checkbox 
+
+            -> Sections 
+
+                -> Forms can be split into Sections (tabs)
+
+                -> Activity Stream 
+
+                    -> Show Comments, Work Notes, Priority etc 
+
+
+            -> Basic form Interactions 
+
+                -> View Data - Read each field 
+
+                -> Edit Data - Change data 
+
+                -> Save Data - Saves and Stay On the form (Right Click -> Save)
+
+                -> Update - Saves and returns to previous list 
+
+    
+    -> ServiceNow Data & Database 
+
+        -> What Is Data ?
+
+            -> Data is information that can be stored and used. 
+
+                -> A Person Name (caller - Fred Luddy)
+                -> A Description (short description EMAIL is slow when an attachment is involved)
+                -> An Incident Number (INC0000013)
+                -> etc 
+
+            -> NOTE: In ServiceNow all the tickets, users, assets, services etc are just data stored in
+            structured form 
+
+
+        -> What is Database ?
+
+            -> A Database is digital storage System that organizes data, so we can Search, update and analyze it easily 
+
+            -> Types Of Databases 
+
+                -> Relations Database(SQL)
+
+                    -> Stores data in Tables (rows & columns) 
+
+                    -> Examples: MySQL, Maria DB, Postgres SQL etc 
+
+                    -> ServiceNow Uses Relational Model under the hood. 
+
+                        -> ServiceNow primarily uses MariaDB (a community-developed fork of MySQL) 
+
+
+        -> Tables 
+
+            -> What is Table ?
+
+                -> A table is the fundamental structure used to organize and store data in a relational database
+
+                -> https://hbs-rcs.github.io/sql-novice-survey/fig/RelationalDB.PNG
+
+                -> Think of tables as excel sheets 
+
+                    -> Each Row = One Record (specific item)
+
+                    -> Each Column = One Field (specific piece of information about the item)
+
+                    -> Each Cell = Value of one field for one record 
+
+
+                -> In ServiceNow
+
+                    -> A Record is Row (Single Incident)
+
+                    -> A Filed is Column (Short Description)
+
+                    -> Incident Table (Stores all incidents Records)
+
+            -> NOTE: ServiceNow has 4000+ tables 
+
+            -> Task Related Tables 
+
+                -> Task (task) - Base table for many work items 
+
+                -> incident - Unplanned Interruptions 
+                
+                -> problem - Recurring Issues (Root Cause Analysis)
+
+                -> change_request - Planned Changes in the IT Environment
+
+            
+            -> User & Access 
+
+                -> User (sys_user) - Stores User Profiles 
+
+                -> Group (sys_user_group) - Collection Of Users 
+
+                -> Role (sys_user_role) - Defines Permissions 
+
+            
+            -> Knowledge Management
+
+                -> Knowledge Article (kb_knowledge)
+
+                -> Knowledge Category (kb_category)
+
+                -> Knowledge Base (kb_knowledge_base)
+
+            
+            -> Service Catalog
+
+                -> Service Catalog (sc_catalog) - Catalog Container 
+
+                -> Catalog Item (sc_cat_item) - individual items 
+
+            
+            -> CMDB (Configuration Management Database)
+
+                -> Configuration Item (cmdb_ci) - Base Class for all CI'same
+
+                -> Server CI (cmdb_ci_server) - Child Class representing Servers, extends cmdb_ci 
+
+        -> NOTE: SYS_ID is a record unique identifier in ServiceNow. 
+        A unique 32-character GUID (Globally Unique ID), called a Sys ID (sys_id) identifies each record.
+
+            -> sys_id - 3D9c573169c611228700193229fff72400
+
+
