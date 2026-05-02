@@ -662,3 +662,136 @@ class - 4
             -> sys_id - 3D9c573169c611228700193229fff72400
 
 
+
+class - 5
+==========
+
+    -> Users - Groups - Roles(Permissions)
+
+
+    -> User 
+
+        -> Every Person who logs into servicenow should have a user created 
+
+        -> Each user is a record in sys_user table(just like each incident in the incident table)
+
+        -> A User record stores information such as
+
+            -> User ID / Username (used for login)
+            -> First Name 
+            -> Last Name 
+            -> Email 
+            -> Phone No 
+            -> Department
+            -> etc 
+
+        -> A user record also tracks 
+
+            -> Which Groups the user belongs to 
+
+            -> Which Roles the user has 
+
+        -> NOTE: User -> belongs to Groups -> Inherits Roles (Recommended Way)
+
+        -> NOTE: User -> Directly Assign Roles 
+
+
+    -> Groups 
+
+        -> For Organizing People 
+
+        -> A Group is Collection Of Users 
+
+        -> Groups records are stored in sys_user_group table 
+
+        -> Groups act like buckets or teams that organize users who share a purpose 
+
+            -> Service Desk 
+            -> Network
+            -> IT Security 
+            -> etc 
+
+    -> Why Groups are important 
+
+        -> Assigning Work 
+
+            -> Incidents, Problems, HR Cases etc can be Assigned to Groups 
+
+            -> Any member of that group can pick up and start working on item 
+
+        -> Managing Permissions 
+
+            -> BEST PRACTICE is to assign Roles To Groups, not Directly to users 
+
+            -> When a user is added to group, they will automatically inherit groups roles 
+
+            -> This approach makes Onboarding, Transfers & Offboarding much easier.
+
+        -> Notifications 
+
+            -> You can send Notifications to an entire group, 
+            Say Service Desk gets notified when P1 incident is logged
+
+        -> Direct Role Assignment 
+
+            ->  You go to a user record and add a role straight to their Roles tab. 
+            It works, but it creates a management problem at scale.
+
+            -> If you have 20 Service Desk agents and they all need the itil role, 
+            you make 20 individual assignments. 
+            When a new agent joins, you remember to add it manually. 
+            When someone leaves or changes teams, you have to hunt down their user record and clean it up. 
+            When an audit asks "who has itil access?", you need to scan every single user record.
+        
+        -> Via Group Assignment
+
+            -> You add the itil role to the Service Desk group once, 
+            then manage membership — not roles. 
+            Every member of the group automatically inherits itil. 
+            Add someone to the group, they instantly get the role. 
+            Remove them from the group, the role is gone. The role itself never needs to be touched again.
+
+    
+    -> Roles - Granting Permissions 
+
+        -> A Role is bundle of Permissions 
+
+        -> Roles are records in the table sys_user_role 
+
+        -> Think of Role as a key that will unlock certain actions to be done on servicenow 
+
+        -> Roles can allow user to do 
+
+            -> Read / Create / Update / Delete (CRUD)
+
+        
+        -> How Roles Can be Assigned 
+
+            -> Role To User (Directly)
+
+            -> Role To Group (All Group members inherit)
+
+            -> Role To Role (Child Roles included automatically)
+
+
+        -> NOTE: Assign Roles To Groups 
+        -> NOTE: Avoid Assigning many roles Directly to user, as it becomes hard to manage and audit 
+
+        -> OOB Roles(Out Of Box) 
+
+            -> admin: Full Access to system 
+            -> itil: Standard Role For IT Staffing manage incidents/problems/changes 
+            -> knowledge_admin: Manages Knowledge Bases and Articles 
+            -> catalog_admin: Manages Service Catalogs 
+            -> report_admin: MAnage Reporting 
+            -> cmdb_admin: Manages CMDB Configurations(ITSM & ITOM)
+
+        
+    -> NOTE: Putting All the things together
+
+        -> User -> Group -> Role(Permission)
+
+    -> NOTE: When we create a user, by default no Permissions are set for user 
+
+    
+
