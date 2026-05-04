@@ -795,3 +795,243 @@ class - 5
 
     
 
+class - 6
+==========
+
+    -> IT Service Management (Zurich / Australia Version)
+
+
+        -> Challenges Facing IT Organizations 
+
+            -> When Considering IT Departments, the Four Primary Challenges 
+
+        -> IT Service Management - Deliver IT Services 
+
+            -> The Lifecycle of IT Services starts with Strategy and continues through 
+            Design, Transition and Operation.
+
+            -> The Key Phases in Delivering IT Services are i.e ITSM Life Cycle 
+
+                -> PLAN -> DESIGN -> CREATE -> OPERATE -> IMPROVE 
+
+            -> Supporting Applications Include 
+
+                -> CMDB (Configuration Management Database)        
+
+                -> Incident Management
+
+                -> Problem Management 
+
+                -> Change Management 
+
+                -> Service Catalog 
+
+
+            -> CMDB (Configuration Management Database) 
+
+                -> Stores IT Assets 
+
+            -> Incident Management
+
+                -> Fix Issues 
+
+            -> Problem Management
+
+                -> Root Cause Issues 
+
+            -> Change Management
+
+                -> Control Changes 
+
+            -> Service Catalog 
+
+                -> User Requests 
+
+
+    -> NOTE: Any Successful ITSM Programs has following practices i.e 4 P's 
+
+        -> People -> Process -> Products -> Partners 
+
+        -> People 
+
+            -> Organization Structure to support Service Delivery 
+            -> Training and Giving Skills Required to execute ITSM Process and Technology 
+            -> Dedicated resources responsible for Managing Tasks 
+
+        -> Process 
+
+            -> Well defined ITSM Processes with clear definitions 
+            -> Clear and Controlled Dependencies with other processes such as Asset Manage(ITAM)
+            -> Process Owners and Stakeholders identified with clear responsibilities 
+
+        -> Products
+
+            -> Softwares that bring together the ITSM Lifecycle to improve the efficiency 
+            -> Automation Applications for Discovering and Monitoring IT Services 
+            -> Integrations with Applications used to support defined processes 
+
+        -> Partners 
+
+            -> Support the Organizations Business Model, providing 24 / 7 Support 
+            -> Provide Technology that complements and enhances Organizations in-house Technology
+
+
+    -> What are Benefits of ITSM 
+
+        -> Benefits For Business 
+
+            -> Increased Agility 
+
+            -> Reduced Costs 
+
+            -> Easy Compliance 
+
+            -> Better Service 
+
+        -> Benefits For IT 
+
+            -> Improved Productivity 
+            
+            -> Increased User Satisfaction 
+
+            -> Faster Response i.e Faster Incident Detection 
+
+        -> Benefits For Employees 
+
+            -> Improved IT Support 
+
+            -> Clear Roles & responsibilities
+            
+            -> Improved Business Alignment 
+
+
+    -> Terminology 
+
+        -> Service 
+
+            -> Delivers value by meeting a need or fulfilling a demand 
+
+                -> Restaurant Providing Dining Services 
+
+                    -> Table Setup 
+                    -> Seating 
+                    -> Wait Staff Greeting 
+                    -> Order Taking 
+                    -> Order Fulfillment 
+                    -> Order Payment 
+                    -> etc 
+
+                    -> There are underlying processes
+
+                        -> Hiring 
+                        -> Training 
+                        -> Technology 
+
+        
+        -> Request
+
+            -> Mechanism for Obtaining, Changing or Discontinuing the use od Service 
+
+                -> Request To Order Food 
+
+                -> Request To Change the way cooking is done 
+
+                -> Request To Discontinuing i.e didn't like the taste of food 
+
+        -> Incident 
+
+            -> An Unplanned Interruption or Quality Reduction 
+
+                -> A Companies Financial System Stopped Responding 
+
+        -> Problem 
+
+            -> The underlying cause of one or more related incidents 
+
+                -> The Company Financial System Stops Responding two or three time a week 
+
+                -> Service is restored each time by rebooting the server on which this 
+                Financial application resides 
+
+                -> A Problem record is opened for multiple occurrences
+
+                -> A Problem needs Detailed Investigation, identifying the "Root Cause" 
+                which in our case is a Faulty Network Card in the Server,
+
+                -> The Card is replaced and the incidents stop occurring 
+
+            
+        -> Change 
+
+            -> The Addition, Modification or Removal of a service components 
+
+                -> A company wide switch to a new instant messaging platform 
+                i.e changing from Microsoft Teams To Slack 
+
+                -> A Change to the server on which the instant messaging application resides on 
+
+                    -> Big Infrastructure for Microsoft Teams 
+
+                    -> Now Change To Small Infrastructure for Slack Application 
+
+
+    -> NOTE: ITSM platform is structured into Three Tiers 
+
+        -> ITSM Standard 
+
+            -> Incident Management
+
+            -> Change Management
+
+            -> Asset Management 
+
+            -> Request Management 
+
+            -> Cost Management 
+
+            -> Agent Workspace (Basic Gen AI)
+
+        -> ITSM Professional (adds to Standard) (Intelligent Automation)
+
+            -> Virtual Agent with AI 
+
+            -> Predictive Intelligence (automatically directs tasks to most suitable team)
+
+            -> AI Based Recommendations 
+
+            -> Vendor Management Workspace 
+
+        -> ITSM Enterprise (adds to Pro + Standard) (Optimization)
+
+            -> Process Mining 
+
+                -> Enables Visual Analysis of Process FLows to Identify Bottlenecks 
+                and Inefficiencies to streamline all Business workflows 
+
+            -> Workforce Optimization 
+
+                -> Allocates Tasks Based On Agent Skills, Availability and Workload 
+
+
+        -> Pricing as of 2026 
+
+            -> ITSM Standard: $70 - $100 Per User / Month 
+
+            -> ITSM Pro: $120 - $160 Per User / Month 
+
+            -> ITSM Enterprise: $160 - $200+ Per User / Month 
+
+        -> NOTE: https://www.servicenow.com/community/image/serverpage/image-id/340758i5967A12A0C9C22FC/image-dimensions/829x1054?v=v2
+
+        
+
+                 
+
+
+
+
+
+
+                
+
+
