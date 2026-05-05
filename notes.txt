@@ -1023,12 +1023,114 @@ class - 6
 
         -> NOTE: https://www.servicenow.com/community/image/serverpage/image-id/340758i5967A12A0C9C22FC/image-dimensions/829x1054?v=v2
 
-        
 
+class - 7
+==========
+
+    -> CMDB & CSDM 
+
+    -> CMDB
+
+        -> Configuration Management Database
+
+            -> Think of it as "Phone Book" for all IT Stuff 
+
+            -> Lists Every Piece Of Technology and How They Connect 
+
+            -> It's Like a Family Tree for your IT Environment 
+
+    -> CSDM 
+
+        -> Common Service Data Model 
+
+            -> It's a Framework 
+
+            -> Think of it as "Organizing Principles" for your phone book 
+
+            -> Tells you how to organize information in the CMDB 
+
+            -> It's Like having sections in your phone book (Residential, Business, Emergency)
+
+
+    -> What is CMDB in Simple Terms ? 
+
+        -> Imagine you are Organizing your home, you might create
+
+            -> A list of all appliances in your home 
+
+            -> Keep track of Purchase Dates and Warranties 
+
+            -> In which room the appliances are in
+
+            -> Their Relationships (TV is connected to cable box)
+
+    -> What is CMDB in Terms Of IT ?    
+
+        -> Imagine you are Offering a service to your customers, you might create  
+
+            -> A List of all the Technology Items (Configuration Items or CI's)
+
+            -> Keep track of details like (model, location, capacity etc)
+
+            -> In which Network, Datacenter or location the Devices are in 
+
+            -> Shows Relationships (Servers hosts database)
+
+
+    -> Key components of CMDB 
+
+        -> Configuration Items (CI's)        
+
+            -> Any IT component that needs managing 
+
+            -> Hardware, Software, Documents etc 
+
+        -> Attributes 
+
+            -> Detailed information about each CI 
+
+                -> Name, Serial Number, Version, Platform(OS) 
+
+
+        -> Relationships 
+
+            -> How Configuration Items (CI's) are connected to each other
+
+                -> Runs On, Depends On, Contains
+
+                    -> Apache Web Server(CI) Runs On Linux Server(CI)
                  
+                    -> Apache Web Server(CI) Contains a Tracked Configuration File(CI)
 
+        -> Classification (Organizing Classes)
 
+            -> Categories Of Similar CI's 
 
+            -> Server 
+
+                -> Web Server  
+
+                    -> Apache Web Server    
+
+                    -> Nginx Web Server 
+
+                -> Application Server 
+
+                    -> Tomcat Server 
+
+                    -> JBoss Server
+
+                -> Database Server 
+
+                    -> MySQL Database
+
+                    -> Postgres Database
+
+        -> Server -> Web Server -> Apache Web Server    
+
+        -> NOTE: Real Classification with Apache Web Server 
+
+            Configuration Item > Application > Infrastructure Service > Web Server > Apache Web Server
 
 
 
