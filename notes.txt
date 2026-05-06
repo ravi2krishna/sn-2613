@@ -1133,7 +1133,257 @@ class - 7
             Configuration Item > Application > Infrastructure Service > Web Server > Apache Web Server
 
 
+class - 8
+==========
 
-                
+    -> CSDM (Common Service Data Model)          
+
+    -> What is CSDM
+
+        -> If CMDB is a library, CSDM tells 
+
+            -> How To organize books (CI's)
+
+            -> Where Each Type Belongs To 
+
+            -> How To Label Them 
+
+    -> CSDM's Philosophy 
+
+        -> Everything in IT exists to deliver a service to the business 
+
+        -> Instead of just tracking Technology, CSDM helps you understand 
+
+            -> What services you provide 
+
+            -> Who Uses Them 
+
+            -> What Technology Enables Them 
+
+            -> How it all connects 
+
+        -> Single Platform
+
+        -> Single Architecture 
+
+        -> Single Data Model 
+
+
+    -> CSDM Pyramid 
+
+        -> Think OF CSDM as a Pyramid with Layers 
+
+
+            -> Business Capability (What the business does)
+
+                -> Strategy & Planning
+                -> Product Management
+                -> Market Expansion 
+
+            -> Business Application (What Users Interact With)
+
+                -> CRM System 
+                -> ERP System 
+                -> Customer Portals 
+
+            -> Application Services (Technical Components)
+
+                -> API's 
+                -> Microservices 
+                -> Authentication 
+
+            -> Infrastructure (Hardware & System Softwares)
+
+                -> Servers
+                -> storage
+                -> Networking 
+                -> Virtualization
+                -> Operating System
+
+
+    -> In CSDM Framework 
+
+        -> Common Service 
+
+            -> A Standard and shared set of service related definitions across 
+            service now Products and platform that will Enables service level Reporting
+
+        -> Data Model 
+
+            -> A CMDB Framework across service now Products and platform that will 
+            Enable and Support multiple Configuration Strategies 
+
+    
+    -> CMDB                               -> CSDM
+
+        -> System Of Records                -> Framework work for Data modeling
+        of Configuration Items 
+
+        -> Focus is on IT Components        -> Focus is on Service 
+
+        -> Assets + Relationships           -> Business + IT Alignment 
+
+
+    -> How CSDM represents data model 
+
+        -> Foundation - represents tables that Contain Base Data 
+        Personas / Roles - Process Owner, Product Owner & Contract Manager 
+
+        -> Ideation & Strategy - represents ideas and concepts for both the 
+        creation of new additional services as well add improvements to 
+        existing services, part of Strategic Portfolio Management(SPM)
+
+        -> Design & Planning - represents tables used by Enterprise Architecture
+        also known as Application Portfolio Management(APM) 
+        Personas / Roles - Enterprise Architecture & Application Owner 
+
+        -> Build & Integration - represents those tables used to give visibility in the 
+        build management like DevOps Process 
+        Personas / Roles - DevOps Engineers & Automation Engineers 
+
+        -> Service Delivery - represents those tables used IT Operations Management
+        such as Service Discovery & Service Mapping.
+        Service Delivery tables are Selected for ITSM: incident, problems & changes 
+
+        -> Service Consumption - represents those tables which are used by 
+        Service Portfolio Management(SPM) and Customer Service Management(CSM)
+        Personas / Roles - Business Relationship Manager or Customer Service Manager 
+
+
+    -> Ecommerce Company - EasyShop 
+
+        -> Website 
+        -> Mobile App 
+        -> Payment Gateway 
+        -> Inventory System 
+        -> Delivery Tracking 
+        -> Customer Support 
+        -> DevOps Pipeline
+        -> Cloud Infrastructure 
+
+        -> NOTE: Lets map each of it to CSDM Domain 
+
+
+    -> Foundation 
+
+        -> Contains core information used everywhere 
+
+            -> Stores 
+
+                -> Users 
+                -> groups
+                -> Departments
+                -> Vendors
+                -> Contracts 
+                -> etc 
+
+    -> Ideation & Strategy 
+
+        -> Captures 
+
+            -> Ideas 
+            -> Business Goals 
+            -> Innovation plans 
+
+        -> We need same delivery feature 
+
+            -> These becomes
+
+                -> Demands 
+                -> Epics 
+                -> Strategic initiatives 
+
+        -> Handel business ideas before actual Development starts
+
+    
+    -> Design & Planning 
+
+        -> Enterprise Architect
+
+            Mobile App
+            API Gateway
+            Product Service
+            Payment Service
+            Order Service
+            Inventory Service 
+
+                -> Business App - Easy Shop 
+                -> Application Service - Payment API 
+                -> Technical Service - MySQL DB 
+
+        -> This Domain designs HOW system should be built 
+
+    -> Build & Integration 
+
+        -> Tracks 
+
+            -> CI / CD 
+            -> Automation
+            -> Integrations 
+
+        -> DevOps teams 
+
+            -> pushes code to github 
+            -> jenkins (Automation) builds app 
+            -> docker container created 
+            -> kubernetes deployment done 
+
+        -> This Domain manges SDLC and deployment Activities 
+
+    
+    -> Service Delivery Domain 
+
+        -> Handles 
+
+            -> Operational Services 
+            -> Incidents 
+            -> Monitoring
+            -> Discovering 
+
+        -> Payment service is down 
+
+            -> Incident Created -> Affected Server Identified -> CI Mapped -> Root Cause Analysis 
+
+    
+        -> Discovery & Mapping
+
+            -> ServiceNow Discovers 
+
+                -> Azure VM / EC2 Servers 
+                -> Maps To Payment Service & Website 
+
+            Customer Cannot Pay 
+            Incident Created 
+            Mapped To Payment API 
+            Connected To EC2 Server 
+            Ops teams fixes issues 
+
+            -> This domain runs and supports the live Production Environment 
+
+
+        -> Service Consumption 
+
+            -> represents
+
+                -> Customers consuming services 
+                -> business user 
+
+            -> Customer says My Order was not delivered 
+
+            -> This enters 
+
+                -> Customer Service 
+                -> Support Portal 
+
+            -> This domain Focuses on how customers consume business service 
+
+
+    
+
+
+
+
+
+
 
 
