@@ -1377,8 +1377,180 @@ class - 8
 
             -> This domain Focuses on how customers consume business service 
 
+class - 9
+==========
+
+    -> IT Service Management(ITSM) Architecture
+
+        -> Imagine a company where employees raise IT problems through emails, phone class, slack etc 
+        No Tracking, No Accountability, No History 
+
+        -> ITSM is simply a structured way to manage IT services, so that problems get fixed faster, reliably and efficiently 
+
+        -> ServiceNow is the Software platform that makes ITSM happen digitally 
+        
+
+    -> ServiceNow ITSM is built around four main areas, you can think them as four Departments
+    inside your IT Organization
+
+        -> Incident Management 
+
+            -> Something is broken, right now fix it Fast 
+
+                -> Example: My Laptop wont start 
+
+        -> Problem Management 
+
+            -> Why does it keep braking ? Finding root cause 
+
+                -> Example: Laptop keep crashing every week 
+
+        -> Change Management 
+
+            -> We want to update something safely 
+
+                -> Example: We want to deploy a new software version 
+
+        -> Service Request Management   
+
+            -> I need something new 
+
+                -> Example: I need a new laptop or software 
+
+
+    -> Incident Management (Most Common Workflow for ITSM)
+
+        -> An incident is any Unplanned disruption to an IT Service. 
+
+        -> This is most frequent type of record in any ServiceNow Instance
+
+        -> Here is what happens from the moment a user reports a problem to the moment it is resolved 
+
+
+                                User Raises Incident 
+                                        |
+                            Auto Assigned by ServiceNow 
+                             (Rules, SLA Timer Starts)
+                                        | 
+                                    L1 Support 
+                            (Categorize,prioritize, attempt fix)
+                                        | 
+        (Priority Level)        Resolved at L1 ?     ---> NO (Escalate To L2 / L3) (Specialists take over )      
+                                        | Yes
+                                 Incident Resolved
+                            (Fix is Applied, User Notified)
+                                        |
+                            Closed After user confirms 
+
+            -> Typical SLA Targets
+                
+                -> P1 - Critical - Respond 15 mins - Resolve 1 Hour
+                -> P2 - High - Respond 30 mins - Resolve 4 Hour
+                -> P3 - Medium - Respond 2 hours - Resolve 1 day
+                -> P4 - Low - Respond 8 hours - Resolve 5 days 
+
+
+
+    -> Problem Management (Fixing Root Cause)
+
+        -> While incident management puts out fires, 
+        problem management asks "Why does this fire keep starting" ?
+
+        -> A problem record is raised when the same incident keeps repeating 
+
+        -> The objective is to find the root cause issue and fix it permanently 
+
+
+
+        Incident #1 (Day-1)                                                     Known Error DB (KEDB)
+        (VPN Drops)                                                             (Workaround Documented)
+
+        Incident #2 (Day-3)                     Problem Record                  
+        (VPN Drops)                     (Start Root Cause Investigation)        Permanent Fix   
+                                                                                (Change Request Raised)
+        Incident #2 (Day-5)                                                             |
+        (VPN Drops)                                                             Problem Closed 
+                                                                              (Future Incidents Prevented)    
+
+
+    -> Change Management (Making Updates Safely)
+
+        -> A change is any Planned Modification to IT Infrastructure / Service 
+
+        -> The Risk is High - a poorly managed change can cause new incidents 
+
+        -> ServiceNow uses an approval based Workflow to ensure changes are reviewed before they go live 
+
+        -> https://drive.google.com/file/d/14xBCmv7HGwpM5AJn0oDqU5Ruy4OWXL7n/view?usp=sharing
+
+
+    -> Service Request & Service Catalog 
+
+        -> A Service Request is not a break / fix 
+
+        -> It's more like "I Need Something"
+
+        -> Service Catalog is like an window shop for your IT Department 
+
+        -> Users will browse like an online store and request items like 
+        new laptop, new software or access to systems 
+
+
+        New Laptop
+        Install Adobe    ----->               Service Catalog
+        VPN Access                                  |
+                                            Request Form Submitted 
+                                        (Users fill details -> submit)
+                                                    |
+                                             approval needed ? ----> Yes Manager Approves (email or in platform)
+                                                                                    |
+                                                    | No / Approved                 |
+                                                                                    |
+                                            Fulfillment Task Created   <------------|             
+                                            (Auto assigned to right team)
+                                                    |
+                                      User get notified request complete 
+
+
+    -> The Configuration Management Database (CMDB) 
+
+                              Business Service 
+                            (Online Banking App)
+
+                                    |
+                                   CMDB
+                        (All Configuration Items(CI's))
+                                    |
+          Server CI       Application CI      Network Device CI       End User Devices CI               
+
+        -> NOTE: All CI's links to Incidents, changes & problems automatically.
+
 
     
+    -> ITSM Complete Picture  
+
+                   
+                                    Users / Employees 
+                            (service portals - emails - chats - bots)
+                                        |
+                            ServiceNow ITSM Platform
+                            (Single System of records)
+                                        |
+        Incident Management     Problem Management      Change Management       Service Request
+    (Break/Fix - SLA tracking)  (Root Cause - KEDB)     (CAB-Risk-Approvals)    (Catalog fulfil)
+                                        |
+                                       CMDB
+                         (All Configuration Items(CI's))
+                                        |
+                                Reporting and Dashboards
+                                (KPI's - Management View)
+
+
+
+
+
+
+
 
 
 
