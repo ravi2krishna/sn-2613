@@ -1551,9 +1551,87 @@ class - 10
 
     -> Incidents Lab with forms
 
+class - 11
+==========
+
+    -> Form Builder in servicenow is a Drag-and-Drop tool used to Design and Customize forms 
+    without writing much code 
+
+    -> With Form Builder We can do 
+
+        -> Add Fields (Description - NewNumber)
+
+        -> Remove Fields
+
+        -> Update Fields
+
+        -> Reorder Fields 
+
+        -> Configure Field Properties 
+
+        -> Sections 
+
+    
+    -> Field Label 
+
+        -> What Users See On Screen(UI) 
+
+        -> Human Friendly Name Shown on UI
+
+    -> Field Name 
+
+        -> Internal (Backend) (Database)
+
+        -> System Friendly Name For Backend Operations 
+
+    -> NOTE: You can duplicate field labels, but not field names 
+
+    -> Every record we create in servicenow gets an unique id assigned we call it as sys_id 
 
 
+    -> Data is piece of information 
 
+    -> Data is stored in tables 
+
+    -> Tables Types 
+
+        -> Base Tables 
+
+            -> OOB(Out Of Box) Tables 
+
+            -> Base tables doesn't extend other table 
+
+            -> Example is user table (sys_user)
+
+        -> Extended Tables 
+
+            -> Tables built on top of other tables 
+
+            -> Will "inherit fields" from Extended tables 
+
+            -> A Child Table Extends Parent Table 
+
+            -> Example Incident, Problem, Change Request Tables extend From Parent called Task 
+
+        -> Custom Tables 
+
+            -> User Defined Tables 
+
+            -> What we created earlier are also custom tables only (u_table)
+
+            -> Custom Tables may or may not extend other tables 
+
+    -> We have Schema Map which shows you all the Relationships 
+
+        -> We have Four Types Of Relationships in servicenow 
+
+            -> Show Extend Tables 
+
+            -> Show Extending Tables 
+
+            -> Show Referenced Tables       
+
+            -> Show Referencing Tables 
 
 
 
