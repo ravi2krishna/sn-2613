@@ -1634,9 +1634,76 @@ class - 11
             -> Show Referencing Tables 
 
 
+class - 12
+==========
+
+    -> Dictionary 
+
+        -> In ServiceNow, a Dictionary defines the Properties and behaviors of fields in table 
+
+        -> To check all the fields and their Properties, we have a centralized place called Dictionary
 
 
+    -> Tables & Columns 
 
+        -> Friendly UI to browse tables and their fields together 
 
+    -> Security 
 
+        -> Users - login to system and perform tasks is servicenow
+
+        -> Groups - logical Collection of users, for easy Organizing 
+
+        -> Roles - Permissions 
+
+    
+    -> Access Control Lists - ACL's (Securing Data(fields))
+
+        -> ACL's are primary way of determining who can access what in servicenow
+
+        -> ACL's can answer questions like 
+
+            -> Can this user read this record 
+            -> Can this user update this record 
+            -> Can this user create or delete this record 
+
+        -> ACL's sit between Users and Data 
+
+    
+    -> Without ACL's
+
+        -> Anyone can see sensitive HR or Financial Data
+
+        -> Users can delete or modify important data 
+
+        -> Compliance and audit requirements would not be met 
+
+    -> With Proper ACL's 
+
+        -> Only HR Can see sensitive or Financial Data
+
+        -> Only Admins can delete or modify important data 
+
+        -> Access can be audited and justified 
+
+    
+    -> Each ACL Record answers 
+
+        -> WHO - which user/role are allowed 
+
+        -> WHAT - What table or field is protected 
+
+        -> HOW - Which Operation is controlled (read, write, remove)
+
+    -> NOTE: When we create a table in ServiceNow, system automatically creates a Role 
+
+    -> If we give system generated role to the users, they can perform all 4 CRUD Operations 
+
+        -> CRUD - Create / Read / Update / Delete 
+
+    -> NOTE: Normally we cannot edit ACL's, we need Elevated Security Privileges
+
+        -> You must have the security_admin role to edit or create ACLs
+
+    
 
